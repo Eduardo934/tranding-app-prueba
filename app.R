@@ -42,6 +42,7 @@ $( function() {
 
 }'
 
+cookie_caducidad<- 1
 # Define UI for application that draws a histogram
 ui <- bootstrapPage(
     useShinyjs(),
@@ -127,7 +128,7 @@ conexion_base <- dbPool(
 server <- function(input, output, session) {
     ###shinyauthr
     ## Días para que la sesión expire
-    cookie_caducidad<- 1
+    
     
     ## Función para guardas información de las sesiones en la base de datos
     add_sessionid_to_db <- function(user, sessionid, conn = conexion_base) {
